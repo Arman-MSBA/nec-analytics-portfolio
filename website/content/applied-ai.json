@@ -1,0 +1,10 @@
+{
+  "title": "Real estate listing automation",
+  "headline": "Give agents more time for the client conversation.",
+  "summary": "An independent ChatGPT API workflow for creating property descriptions and automating Facebook Marketplace posting.",
+  "question": "How can the repetitive work of drafting and publishing property listings take less time?",
+  "contribution": "I developed an AI-powered listing workflow that uses the ChatGPT API to create property descriptions and automate posting on Facebook Marketplace. I described the project publicly on LinkedIn, and it was featured in The Boston Globe in 2023.",
+  "result": "The project connected AI-generated listing copy to a practical business workflow. My public project summary describes reduced manual preparation and more daily inquiries, giving agents more time for client interactions.",
+  "limits": "The public evidence describes the workflow and reported benefits. This case does not present a controlled experiment or verified conversion uplift, and it does not publish customer information, account access, or private source code.",
+  "learning": "The useful starting point for AI is a specific task: here, turning property information into a listing. A future iteration would measure preparation time, review quality, and publishing reliability against a documented baseline."
+}

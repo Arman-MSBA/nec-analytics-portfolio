@@ -1,0 +1,117 @@
+{
+  "santander": {
+    "scope": "Four frozen specifications; 6,000 common fitting customers; 39,999 test customers; internal course-data evaluation.",
+    "threshold": 0.5,
+    "preferredMetric": "logLoss",
+    "positiveClassShare": 0.10047751193779844,
+    "models": [
+      {
+        "id": "Logistic",
+        "name": "Logistic regression",
+        "logLoss": 0.27371945835303,
+        "auc": 0.789562854650527,
+        "accuracy": 0.903672591814795,
+        "precision": 0.565664556962025,
+        "recall": 0.177904951480468,
+        "f1": 0.270679538141208,
+        "truePositive": 715,
+        "trueNegative": 35431,
+        "falsePositive": 549,
+        "falseNegative": 3304,
+        "lossReductionPercent": 16.0706795546647
+      },
+      {
+        "id": "SVM",
+        "name": "Calibrated SVM",
+        "logLoss": 0.230374305138002,
+        "auc": 0.863775042422866,
+        "accuracy": 0.913622840571014,
+        "precision": 0.675810473815461,
+        "recall": 0.269718835531227,
+        "f1": 0.385559309976881,
+        "truePositive": 1084,
+        "trueNegative": 35460,
+        "falsePositive": 520,
+        "falseNegative": 2935,
+        "lossReductionPercent": 29.3614016532166
+      },
+      {
+        "id": "Random_Forest",
+        "name": "Random Forest",
+        "logLoss": 0.285857405228125,
+        "auc": 0.769300872274152,
+        "accuracy": 0.899497487437186,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "truePositive": 0,
+        "trueNegative": 35979,
+        "falsePositive": 1,
+        "falseNegative": 4019,
+        "lossReductionPercent": 12.3488775353346
+      },
+      {
+        "id": "XGBoost",
+        "name": "XGBoost",
+        "logLoss": 0.343596236818639,
+        "auc": 0.823378875300632,
+        "accuracy": 0.905372634315858,
+        "precision": 0.769585253456221,
+        "recall": 0.0831052500622045,
+        "f1": 0.150011228385358,
+        "truePositive": 334,
+        "trueNegative": 35880,
+        "falsePositive": 100,
+        "falseNegative": 3685,
+        "lossReductionPercent": -5.35531100813904
+      }
+    ],
+    "caveat": "Only SVM probabilities were recalibrated. Feature meanings are unavailable. Accuracy alone hides weak positive-class recall."
+  },
+  "nutrition": {
+    "scope": "Five-fold CV on 7,022 development foods; 1,767 held-out foods; internal split of 8,789 food records.",
+    "selectedByCV": "LASSO",
+    "lowestHeldOutRMSE": "Ridge",
+    "models": [
+      {
+        "name": "Mean",
+        "rmse": 169.560657761075,
+        "mae": 135.373024419816,
+        "mse": 28750.8166603685,
+        "rSquared": -0.000373053228287734
+      },
+      {
+        "name": "LASSO",
+        "rmse": 14.4659353434484,
+        "mae": 5.98136242771006,
+        "mse": 209.263285360829,
+        "rSquared": 0.992718768507416,
+        "cvRMSE": 11.9551960923636,
+        "alpha": 1.0,
+        "lambda": 0.0524807460249772
+      },
+      {
+        "name": "Ridge",
+        "rmse": 14.3998123753513,
+        "mae": 6.00083005281121,
+        "mse": 207.354596445319,
+        "rSquared": 0.99278518056731,
+        "cvRMSE": 12.002491962862,
+        "alpha": 0.0,
+        "lambda": 0.00691830970918936
+      },
+      {
+        "name": "Elastic Net",
+        "rmse": 14.4708304330678,
+        "mae": 5.98168108350434,
+        "mse": 209.404933422602,
+        "rSquared": 0.992713839920318,
+        "cvRMSE": 11.9556913464396,
+        "alpha": 0.9,
+        "lambda": 0.0630957344480193
+      }
+    ],
+    "caveat": "Retain the CV-selected LASSO after reporting all test scores. Tiny test differences do not establish meaningful superiority. Related foods can span partitions."
+  },
+  "provenance": "Exact values loaded from saved aggregate result CSVs. No new model fit."
+}

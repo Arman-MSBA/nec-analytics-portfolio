@@ -1,0 +1,132 @@
+{
+  "asOf": "2026-10-21",
+  "name": "Arman Khachatryan",
+  "suffix": "MSBA",
+  "location": "Greater Boston, Massachusetts",
+  "descriptor": "Business intelligence · Analytics engineering · Applied AI",
+  "headline": "I turn complex data into reporting, automation, and practical AI tools.",
+  "introduction": "I'm Arman, a Boston-based analytics professional with 6+ years of experience across financial services, consumer goods, healthcare, and higher education. I build reporting systems, data workflows, and business applications that help teams understand their data and spend less time on manual work.",
+  "about": "My work connects the business question to the technical solution. At Santander, that has meant internal audit reporting, Power BI dashboards, and Power Platform workflows. At Hershey, it included Snowflake SQL transformations, Power BI models, and Microsoft Fabric solutions. I'm also completing an MS in Data Science and Analytics at New England College, where I explore machine learning, financial analytics, and responsible model evaluation through applied projects.",
+  "careerIntent": "I'm interested in senior BI, analytics engineering, and applied AI opportunities where I can work closely with business teams and build useful data products.",
+  "consultingIntro": "I can help teams clarify a reporting problem, improve a manual data workflow, or explore a practical AI use case. My approach starts with the business question, the available data, and a clear definition of what success should look like.",
+  "contactPrompt": "Have a reporting or automation problem in mind? Let's talk.",
+  "links": {
+    "linkedin": "https://www.linkedin.com/in/arman-khachatryan-2022/",
+    "github": "https://github.com/Arman-MSBA",
+    "tableauArtifacts": "https://drive.google.com/drive/folders/1wAkAzGjvCqEskvYoTH8S8x-27bjqAagK?usp=share_link"
+  },
+  "experience": [
+    {
+      "company": "Santander Bank, N.A.",
+      "role": "Senior Specialist, Data Science",
+      "recordedPriorRole": "Senior Specialist Business Intelligence",
+      "publicFunctionalLabel": "Senior Specialist, Data Science",
+      "period": "Jul 2025–present",
+      "summary": "Built internal audit reporting in Power BI, supported a Tableau migration, and developed Power Platform workflows for audit stakeholders.",
+      "skills": [
+        "Power BI",
+        "DAX",
+        "Power Apps",
+        "Power Automate",
+        "Power Query"
+      ]
+    },
+    {
+      "company": "The Hershey Company",
+      "role": "Data Visualization Engineer",
+      "period": "Oct 2023–Jun 2025",
+      "summary": "Converted Alteryx workflows into Snowflake SQL, optimized Power BI reporting models, and worked on Microsoft Fabric solutions.",
+      "skills": [
+        "Power BI",
+        "Snowflake SQL",
+        "Alteryx",
+        "Microsoft Fabric",
+        "PySpark",
+        "Azure Data Factory"
+      ]
+    },
+    {
+      "company": "CRICO",
+      "role": "Data Analyst",
+      "period": "Apr 2023–Sep 2023",
+      "summary": "Built Power BI and Python analytics and prepared data through SQL and Snowflake ETL workflows.",
+      "skills": [
+        "Power BI",
+        "Python",
+        "SQL",
+        "Snowflake"
+      ]
+    },
+    {
+      "company": "Northeastern University",
+      "role": "Data Visualization Analyst",
+      "period": "Feb 2022–Oct 2023",
+      "summary": "Created alumni-survey dashboards, used Python and the ChatGPT API for feedback analysis, and automated data collection with Selenium.",
+      "skills": [
+        "Tableau",
+        "Power BI",
+        "Python",
+        "ChatGPT API",
+        "Selenium"
+      ]
+    },
+    {
+      "company": "Just Drive Media",
+      "role": "Social Media Analyst",
+      "period": "Jun 2022–Feb 2023",
+      "summary": "Built R Shiny sentiment dashboards and used text analytics to support communication and brand analysis.",
+      "skills": [
+        "R",
+        "R Shiny",
+        "Text analytics"
+      ]
+    },
+    {
+      "company": "INDEXBOARD",
+      "role": "Business Analyst",
+      "period": "Mar 2020–Sep 2021",
+      "summary": "Analyzed SEC financial statements and automated research tasks with Python and Selenium.",
+      "skills": [
+        "Financial analysis",
+        "Python",
+        "Selenium"
+      ]
+    }
+  ],
+  "services": [
+    {
+      "title": "Reporting and dashboard improvement",
+      "description": "Clarify KPIs, review a manual report, and build a focused Power BI or Tableau view."
+    },
+    {
+      "title": "Data workflow automation",
+      "description": "Consolidate sources and make repeatable transformations with SQL, Snowflake, Fabric, Python, or Power Platform."
+    },
+    {
+      "title": "Practical AI discovery and prototyping",
+      "description": "Identify a bounded workflow, build a small API-based prototype, and define human review and evaluation."
+    },
+    {
+      "title": "Business analytics and decision support",
+      "description": "Turn financial, customer, or operational data into clear findings, limitations, and next actions."
+    }
+  ],
+  "education": [
+    {
+      "school": "New England College",
+      "degree": "MS, Data Science and Analytics",
+      "status": "In progress"
+    },
+    {
+      "school": "Northeastern University",
+      "degree": "MS, Business Analytics",
+      "date": "December 2022"
+    },
+    {
+      "school": "American University of Armenia",
+      "degree": "BA, Business",
+      "date": "May 2021"
+    }
+  ],
+  "learning": "My current learning connects data engineering, business automation, and practical AI integration. NEC coursework gives me space to test methods, understand their limits, and turn the results into clear, reproducible projects."
+}

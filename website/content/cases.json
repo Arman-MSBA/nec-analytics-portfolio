@@ -1,0 +1,233 @@
+[
+  {
+    "slug": "retail-tableau",
+    "category": "bi",
+    "categoryName": "Business intelligence",
+    "title": "Retail performance in Tableau",
+    "headline": "Where is retail performance changing, and what deserves a closer look?",
+    "summary": "Two Tableau coursework workbooks connect sales, profit and order KPIs with interactive exploration, trend comparisons and forecasting.",
+    "tools": [
+      "Tableau",
+      "Dashboard actions",
+      "Calculated fields",
+      "Forecasting"
+    ],
+    "label": "Individual NEC coursework",
+    "question": "How can a retail manager move from a headline KPI to the regional, category and time patterns behind it?",
+    "contribution": "I built the workbook views, calculations and dashboard layouts, then paired the visual analysis with written interpretation of the course retail data.",
+    "methods": [
+      "Built an analytical overview, interactive insights and a KPI scorecard for sales, profit and order volume.",
+      "Connected regional and category views with filters, dashboard actions and a selected-region sales target.",
+      "Compared linear, exponential and polynomial trends, profit distributions and a four-cluster solution.",
+      "Placed automatic and custom seasonal forecasts side by side to examine their assumptions."
+    ],
+    "facts": [
+      {
+        "label": "Workbooks",
+        "value": "2"
+      },
+      {
+        "label": "Saved dashboard / story views",
+        "value": "9"
+      },
+      {
+        "label": "Coverage",
+        "value": "KPIs · trends · forecasts"
+      }
+    ],
+    "result": "The final submitted workbooks contain eight dashboard views and one four-point Tableau story: three dashboards plus the story in Module 7, and five dashboards in Module 8. Sanitized workbook definitions are available in the project repository.",
+    "insight": "A useful dashboard supports a sequence of questions: what changed, where the change occurred and which assumptions need testing before a decision.",
+    "limits": "The supplied retail data are course exercises. Trend fits and clusters are exploratory, and no future-period forecast accuracy or realized sales improvement is claimed. Images below are original saved workbook thumbnails at 192 × 192 pixels. Data were excluded from the public source package; workbook refresh was not repeated.",
+    "nextStep": "Test forecast choices on a later time period and replace the saved thumbnails with fresh, full-resolution dashboard exports after reconnecting authorized data.",
+    "images": [
+      {
+        "file": "tableau-w7-analytical-overview.png",
+        "alt": "Original Tableau thumbnail showing regional sales, category profit and monthly sales views",
+        "caption": "Analytical Overview · original saved 192px workbook preview",
+        "width": 192,
+        "height": 192,
+        "maxWidth": 192
+      },
+      {
+        "file": "tableau-w7-kpi-scorecard.png",
+        "alt": "Original saved thumbnail of the retail KPI scorecard",
+        "caption": "KPI Scorecard · original saved 192px workbook preview",
+        "width": 192,
+        "height": 192,
+        "maxWidth": 192
+      },
+      {
+        "file": "tableau-w8-d-forecast-comparison.png",
+        "alt": "Original saved Tableau thumbnail comparing automatic and custom seasonal forecasts",
+        "caption": "Forecast Comparison · original saved 192px workbook preview",
+        "width": 192,
+        "height": 192,
+        "maxWidth": 192
+      }
+    ],
+    "repoPath": "projects/retail-tableau"
+  },
+  {
+    "slug": "santander-classification",
+    "category": "ml",
+    "categoryName": "Machine learning",
+    "title": "A fair classification comparison",
+    "headline": "Which model produces the most reliable probabilities on the same customers?",
+    "summary": "An academic Santander benchmark exercise comparing four classification models on anonymized course data with a shared training budget and identical evaluation rows.",
+    "tools": [
+      "R",
+      "data.table",
+      "e1071",
+      "ranger",
+      "XGBoost"
+    ],
+    "label": "Individual NEC coursework",
+    "question": "Can logistic regression, a radial SVM, Random Forest and XGBoost beat a constant forecast when each model receives the same fitting data?",
+    "contribution": "I refitted four previously selected model specifications on common rows, added validation-based SVM calibration and compared probability quality, ranking and thresholded decisions. This is academic benchmark work using course data, with no employer or client dataset involved.",
+    "methods": [
+      "Used a stratified split with 6,000 common fitting customers and separate validation and test sets of 39,999 customers each.",
+      "Learned imputation and scaling from fitting rows, keeping test data outside preprocessing and calibration.",
+      "Compared held-out binary log loss and ROC AUC, then examined accuracy, precision and recall at a 0.50 cutoff.",
+      "Checked training-to-test loss and calibration to explain overconfidence and class-imbalance effects."
+    ],
+    "facts": [
+      {
+        "label": "Common fitting sample",
+        "value": "6,000 customers"
+      },
+      {
+        "label": "SVM test ROC AUC",
+        "value": "0.864"
+      },
+      {
+        "label": "SVM test log loss",
+        "value": "0.230"
+      }
+    ],
+    "result": "The calibrated SVM had the lowest saved test log loss, 0.23037, a 29.36% reduction against the constant-probability baseline. Its test accuracy was 91.36%, while recall at the 0.50 cutoff was 26.97%.",
+    "insight": "The always-negative baseline already achieves 89.95% accuracy. The comparison makes the practical tradeoff visible: a model can look accurate while missing most positive cases, so probability quality and recall belong beside the headline score.",
+    "limits": "These are saved results from an internal course-data comparison. Prior experiments informed the frozen specifications, and only the SVM was recalibrated. The 6,000-row fitting budget limits the comparison. Anonymized features cannot be explained as specific customer behaviors, and no financial savings or deployment performance is claimed. Models were not retrained during portfolio preparation.",
+    "nextStep": "Choose a decision threshold using explicit costs for missed positives and false alarms, then evaluate calibration and performance on fresh data with equivalent tuning budgets.",
+    "images": [
+      {
+        "file": "santander-log-loss-comparison.png",
+        "alt": "Bar chart comparing saved held-out log loss for logistic regression, calibrated SVM, Random Forest and XGBoost against a constant forecast",
+        "caption": "Replotted from saved aggregate results · same fitting budget and test customers"
+      },
+      {
+        "file": "santander-roc.png",
+        "alt": "Original report ROC curves showing calibrated SVM AUC 0.864, XGBoost 0.823, logistic regression 0.790 and Random Forest 0.769",
+        "caption": "Original report figure · common test ROC curves"
+      }
+    ],
+    "repoPath": "projects/santander-classification"
+  },
+  {
+    "slug": "lendingclub-analysis",
+    "category": "analytics",
+    "categoryName": "Data analysis",
+    "title": "Six years of lending patterns",
+    "headline": "How do loan and borrower patterns vary across states and regions?",
+    "summary": "A descriptive R analysis combining 2012–2017 loan files with geographic lookups to explore loan grades, rates, borrower characteristics and regional patterns.",
+    "tools": [
+      "R",
+      "tidyverse",
+      "ggplot2",
+      "maps"
+    ],
+    "label": "Individual NEC coursework",
+    "question": "What becomes visible when six annual lending files are cleaned, joined and examined together rather than as separate tables?",
+    "contribution": "I combined the annual files under an explicit schema, cleaned the analysis fields, joined state and region lookups, and created comparative charts and a US state map.",
+    "methods": [
+      "Stacked six annual loan files with explicit column definitions and consistent types.",
+      "Joined state and regional lookup tables for geographic summaries.",
+      "Compared loan grades and interest rates, income and loan amounts, and employment patterns.",
+      "Created state-level choropleth maps and regional views using grouped R summaries."
+    ],
+    "facts": [
+      {
+        "label": "Source period",
+        "value": "2012–2017"
+      },
+      {
+        "label": "Annual files",
+        "value": "6"
+      },
+      {
+        "label": "Analysis",
+        "value": "Borrowers · loans · geography"
+      }
+    ],
+    "result": "The final coursework analysis produced a unified view of six years of lending data, including a state map of average loan amount and comparisons of loan grades, rates and borrower characteristics.",
+    "insight": "Geographic comparisons need the measure and sample context attached. Average loan size describes the supplied loans; it does not establish a state's credit quality or explain why the pattern exists.",
+    "limits": "This is descriptive, observational coursework. The figures are existing rendered outputs, and the underlying computation was not rerun for the portfolio. The public package excludes borrower-level records. No causal effect, future credit performance, predictive accuracy or financial impact is claimed.",
+    "nextStep": "Add sample-size and coverage checks to each geographic comparison, then examine whether the patterns remain after accounting for loan year and borrower mix.",
+    "images": [
+      {
+        "file": "lendingclub-state-map.png",
+        "alt": "Original analysis map showing average Lending Club loan amount by US state for 2012 through 2017",
+        "caption": "Original rendered report figure · average loan amount by state, 2012–2017"
+      },
+      {
+        "file": "lendingclub-grade-rates.png",
+        "alt": "Original analysis chart comparing loan grade and interest-rate patterns",
+        "caption": "Original rendered report figure · loan grades and interest rates"
+      }
+    ],
+    "repoPath": "projects/lendingclub-analysis"
+  },
+  {
+    "slug": "nutrition-regularization",
+    "category": "ml",
+    "categoryName": "Machine learning",
+    "title": "Nutrition prediction with regularization",
+    "headline": "How much complexity is needed to predict calorie density?",
+    "summary": "A comparison of LASSO, Ridge and Elastic Net using shared cross-validation folds, careful missing-value handling and a held-out food-record evaluation.",
+    "tools": [
+      "R",
+      "glmnet",
+      "Matrix",
+      "Cross-validation"
+    ],
+    "label": "Individual NEC coursework",
+    "question": "Which regularization setting predicts calories per 100 grams well while controlling coefficient complexity?",
+    "contribution": "I compared the three penalty families on the same foods and folds, learned preprocessing separately inside each fold, and kept the cross-validation choice fixed when reporting held-out results.",
+    "methods": [
+      "Split 8,789 foods by food group into 7,022 development and 1,767 held-out records.",
+      "Used 33 numeric nutrient predictors plus food group, excluding IDs, names and portion weights.",
+      "Compared 1,111 alpha/lambda settings with five shared folds and fitting-fold imputation and missingness indicators.",
+      "Selected by cross-validation error, then reported test RMSE, MAE, R-squared and coefficient counts for all three techniques."
+    ],
+    "facts": [
+      {
+        "label": "Food records",
+        "value": "8,789"
+      },
+      {
+        "label": "Settings compared",
+        "value": "1,111"
+      },
+      {
+        "label": "LASSO test RMSE",
+        "value": "14.47 kcal / 100 g"
+      }
+    ],
+    "result": "Cross-validation selected LASSO, with test RMSE 14.466 kcal per 100 g and R-squared 0.9927. Ridge had a slightly lower test RMSE of 14.400; I retained LASSO as the selected model rather than changing the choice after seeing test results.",
+    "insight": "The small test-error spread is less informative than the selection discipline. LASSO retained 63 of 88 design columns, and the near tie provides no basis for claiming a meaningful advantage for one penalty family.",
+    "limits": "These are saved internal food-record results, without a new model run. Similar formulations may occur in both partitions, so transfer to new product families remains untested. Total carbohydrate is absent from the export. Coefficients describe conditional associations, not causal nutrient effects or dietary recommendations; high aggregate fit still includes large individual errors.",
+    "nextStep": "Keep related food formulations in the same partition and test nonlinear effects to assess performance on genuinely different food groups or product families.",
+    "images": [
+      {
+        "file": "nutrition-test-rmse-comparison.png",
+        "alt": "Chart showing nearly equal held-out RMSE for LASSO 14.466, Ridge 14.400 and Elastic Net 14.471, with LASSO selected by cross-validation",
+        "caption": "Replotted from saved aggregate results · CV-selected LASSO retained after test evaluation"
+      },
+      {
+        "file": "nutrition-prediction-diagnostics.png",
+        "alt": "Original report plots comparing observed and predicted calories for LASSO and showing residual errors",
+        "caption": "Original report figure · held-out prediction agreement and residual pattern"
+      }
+    ],
+    "repoPath": "projects/nutrition-regularization"
+  }
+]
