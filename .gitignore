@@ -1,0 +1,11 @@
+node_modules/
+website/dist/
+.env
+.env.*
+.Rhistory
+.RData
+.Renviron
+.Rproj.user/
+__pycache__/
+.DS_Store
+Thumbs.db

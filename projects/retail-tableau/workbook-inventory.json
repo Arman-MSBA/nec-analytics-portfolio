@@ -1,0 +1,104 @@
+[
+  {
+    "week": 7,
+    "dashboards": [
+      "Analytical Overview",
+      "Interactive Insights",
+      "KPI Scorecard",
+      "Retail Performance Story"
+    ],
+    "worksheets": [
+      "Category Monthly Sales",
+      "Interactive Category Profit",
+      "Interactive Region Sales",
+      "KPI Order Volume",
+      "KPI Profit Ratio",
+      "KPI YTD Profit",
+      "KPI YTD Sales",
+      "Monthly Sales",
+      "Monthly Sales Phone",
+      "Monthly Sales vs Target",
+      "Profit by Category",
+      "Sales by Region",
+      "Written Notes"
+    ],
+    "thumbnails": [
+      {
+        "name": "Analytical Overview",
+        "asset": "tableau-w7-analytical-overview.png",
+        "declared_width": "192",
+        "declared_height": "192"
+      },
+      {
+        "name": "Interactive Insights",
+        "asset": "tableau-w7-interactive-insights.png",
+        "declared_width": "192",
+        "declared_height": "192"
+      },
+      {
+        "name": "KPI Scorecard",
+        "asset": "tableau-w7-kpi-scorecard.png",
+        "declared_width": "192",
+        "declared_height": "192"
+      },
+      {
+        "name": "Retail Performance Story",
+        "asset": "tableau-w7-retail-performance-story.png",
+        "declared_width": "192",
+        "declared_height": "192"
+      }
+    ]
+  },
+  {
+    "week": 8,
+    "dashboards": [
+      "A Trend Model Comparison",
+      "B Distribution Findings",
+      "C Cluster Findings",
+      "D Forecast Comparison",
+      "E Retail Analytics Overview"
+    ],
+    "worksheets": [
+      "A1 Linear Trend",
+      "A2 Exponential Trend",
+      "A3 Polynomial Trend",
+      "B Profit Distributions",
+      "C Four Clusters",
+      "D1 Automatic Forecast",
+      "D2 Custom Seasonal Forecast",
+      "Written Notes"
+    ],
+    "thumbnails": [
+      {
+        "name": "A Trend Model Comparison",
+        "asset": "tableau-w8-a-trend-model-comparison.png",
+        "declared_width": "192",
+        "declared_height": "192"
+      },
+      {
+        "name": "B Distribution Findings",
+        "asset": "tableau-w8-b-distribution-findings.png",
+        "declared_width": "192",
+        "declared_height": "192"
+      },
+      {
+        "name": "C Cluster Findings",
+        "asset": "tableau-w8-c-cluster-findings.png",
+        "declared_width": "192",
+        "declared_height": "192"
+      },
+      {
+        "name": "D Forecast Comparison",
+        "asset": "tableau-w8-d-forecast-comparison.png",
+        "declared_width": "192",
+        "declared_height": "192"
+      },
+      {
+        "name": "E Retail Analytics Overview",
+        "asset": "tableau-w8-e-retail-analytics-overview.png",
+        "declared_width": "192",
+        "declared_height": "192"
+      }
+    ]
+  }
+]

@@ -1,0 +1,13 @@
+data/*
+!data/README.md
+.Rhistory
+.RData
+.Rproj.user/
+renv/library/
+results/*.rds
+results/*.ubj
+results/*predictions.csv
+results/*membership.csv
+results/split_and_folds.csv
+analysis.html
+analysis_files/
