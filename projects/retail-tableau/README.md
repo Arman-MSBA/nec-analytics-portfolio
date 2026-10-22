@@ -18,9 +18,26 @@ custom seasonal forecasts. The saved workbook includes written interpretation.
 
 ## Available artifacts
 
-`workbooks/` contains sanitized Tableau XML definitions. Raw CSVs and Hyper extracts
-are excluded. Reconnect each workbook to authorized course CSVs before opening or
-refreshing it. These definitions were XML-validated; a refresh was not performed.
+Download a packaged workbook to open the dashboards with their saved data:
+
+- [Retail performance — Module 7](workbooks/retail-performance.twbx)
+- [Retail analytics — Module 8](workbooks/retail-analytics.twbx)
+
+The `.twbx` packages include Hyper extracts of the synthetic daily retail course
+data and written notes. They are self-contained: opening the saved dashboards
+does not require the original CSV files or access to a private file path. Open
+them in Tableau Desktop or Tableau Desktop Public Edition. Refreshing from the
+original CSVs is a separate operation and requires those source files.
+
+The `.twb` XML definitions remain available in `workbooks/` for source inspection.
+Those data-free files require reconnection before they can display the dashboards;
+use the `.twbx` packages for viewing. Private local paths and connection credentials
+have been removed from the public copies.
+
+[Read the portfolio case study](https://arman-khachatryan-ai-analytics.homehub-ai.chatgpt.site/projects/retail-tableau/)
+for the business questions, findings and limitations. A GitHub file preview does
+not run Tableau; an interactive browser view requires publication to Tableau Public.
+
 The `figures/` images are genuine embedded workbook thumbnails at their saved
 resolution, not new dashboard captures. They are useful as previews, not detailed screenshots.
 
@@ -30,5 +47,6 @@ The supplied daily retail data are course exercises. They are not verified busin
 operations or evidence of revenue improvement. A fitted trend or a four-cluster
 solution is exploratory, not causal or externally validated. Forecast scenarios
 need out-of-time evaluation before business use; no unseen-period forecast error
-is claimed. Source-workbook fingerprint metadata and local connection credentials
-have been removed from this public source package.
+is claimed. These workbooks contain coursework data, not data from an employer.
+Source-workbook fingerprint metadata and local connection credentials have been
+removed from this public source package.

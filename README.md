@@ -8,7 +8,7 @@ Selected independent coursework from New England College, organized around busin
 
 | Project | Evidence and methods | Explore |
 | --- | --- | --- |
-| Retail performance in Tableau | Two workbooks, eight dashboards, one story; KPIs, trends, clusters, forecast comparisons | [Source and notes](projects/retail-tableau) · [Case study](https://arman-khachatryan-ai-analytics.homehub-ai.chatgpt.site/projects/retail-tableau/) |
+| Retail performance in Tableau | Two packaged workbooks with included extracts, eight dashboards, one story; KPIs, trends, clusters, forecast comparisons | [Workbooks and notes](projects/retail-tableau) · [Case study](https://arman-khachatryan-ai-analytics.homehub-ai.chatgpt.site/projects/retail-tableau/) |
 | A fair classification comparison | Logistic regression, calibrated SVM, random forest, XGBoost; same fitting budget and evaluation customers | [Source and results](projects/santander-classification) · [Interactive evaluation](https://arman-khachatryan-ai-analytics.homehub-ai.chatgpt.site/projects/santander-classification/) |
 | Six years of lending patterns | R data preparation and geographic analysis of LendingClub files from 2012 to 2017 | [Source and charts](projects/lendingclub-analysis) · [Case study](https://arman-khachatryan-ai-analytics.homehub-ai.chatgpt.site/projects/lendingclub-analysis/) |
 | Nutrition prediction with regularization | LASSO, Ridge, Elastic Net; shared cross-validation folds and held-out evaluation | [Source and results](projects/nutrition-regularization) · [Case study](https://arman-khachatryan-ai-analytics.homehub-ai.chatgpt.site/projects/nutrition-regularization/) |
@@ -17,16 +17,16 @@ The classification project uses anonymized academic benchmark/course data. It is
 
 ## How to inspect or reproduce the work
 
-Start with the README in the relevant project folder. Each explains the required input files, environment, execution order, saved aggregate results, and data limitations. The scripts use project-relative paths; obtain authorized source data separately before attempting a full run.
+Start with the README in the relevant project folder. Each explains the required input files, environment, execution order, saved aggregate results, and data limitations. The Tableau `.twbx` packages include Hyper extracts for viewing the saved dashboards. The analysis scripts and separate data-free Tableau `.twb` definitions use project-relative paths; obtain authorized source data separately before attempting a full run or a source refresh.
 
-Raw course datasets, borrower-level records, row-level predictions, fitted models, assignment briefs, grades, and private machine paths are excluded. Tableau workbook definitions are sanitized and must be reconnected to authorized data. Original saved Tableau previews remain at their native 192px size.
+Raw CSV datasets, borrower-level records, row-level predictions, fitted models, assignment briefs, grades, and private machine paths are excluded. The Tableau packages include only their synthetic retail coursework extracts and written notes; they contain no employer data. Original saved Tableau previews remain at their native 192px size.
 
 ### Verification scope
 
 - Six R source files passed syntax parsing in R 4.5.3.
 - Saved aggregate model metrics were inspected and used to create comparison charts and the interactive evaluation view.
-- Both sanitized Tableau XML files parse; dashboard/story inventory was checked against the final submitted workbooks.
-- Full model training and Tableau data refresh were not repeated for this publication.
+- Both sanitized Tableau XML files parse; dashboard/story inventory was checked against the final submitted workbooks. Both shareable `.twbx` packages opened in Tableau Public 2026.2 with their embedded data and populated charts.
+- Full model training and Tableau source-data refresh were not repeated for this publication. Opening saved Tableau extracts does not establish forecast accuracy or business impact.
 
 LASSO remains the nutrition model selected by cross-validation even though Ridge has slightly lower held-out RMSE. The classification case reports recall beside accuracy rather than presenting the headline accuracy as a deployment decision.
 
