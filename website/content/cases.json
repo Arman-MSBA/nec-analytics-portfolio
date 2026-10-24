@@ -35,10 +35,25 @@
         "value": "KPIs · trends · forecasts"
       }
     ],
-    "result": "The final submitted workbooks contain eight dashboard views and one four-point Tableau story: three dashboards plus the story in Module 7, and five dashboards in Module 8. Sanitized workbook definitions are available in the project repository.",
+    "result": "The final submitted workbooks contain eight dashboard views and one four-point Tableau story: three dashboards plus the story in Module 7, and five dashboards in Module 8. Downloadable packaged workbooks include the course data extracts needed to explore the views.",
     "insight": "A useful dashboard supports a sequence of questions: what changed, where the change occurred and which assumptions need testing before a decision.",
-    "limits": "The supplied retail data are course exercises. Trend fits and clusters are exploratory, and no future-period forecast accuracy or realized sales improvement is claimed. Images below are original saved workbook thumbnails at 192 × 192 pixels. Data were excluded from the public source package; workbook refresh was not repeated.",
-    "nextStep": "Test forecast choices on a later time period and replace the saved thumbnails with fresh, full-resolution dashboard exports after reconnecting authorized data.",
+    "limits": "The retail data are synthetic course exercises. Trend fits and clusters are exploratory, and no unseen-period forecast accuracy or realized sales improvement is claimed. The large previews are native screenshots from the validated workbooks. Packaged workbooks open with their embedded extracts; refreshing the original course CSV sources requires those files.",
+    "nextStep": "Test forecast choices on a later time period and compare forecast errors before using the projections to guide a decision.",
+    "workbookNote": "Packaged workbooks include embedded course data extracts. Files verified in Tableau Public 2026.2.",
+    "workbooks": [
+      {
+        "title": "Retail performance · Module 7",
+        "description": "Three dashboards and a four-point story covering the analytical overview, interactive insights and KPI scorecard.",
+        "fileName": "retail-performance.twbx",
+        "downloadUrl": "/downloads/tableau/retail-performance.twbx"
+      },
+      {
+        "title": "Retail analytics · Module 8",
+        "description": "Five dashboards exploring trends, profit distributions, clusters and seasonal forecast comparisons.",
+        "fileName": "retail-analytics.twbx",
+        "downloadUrl": "/downloads/tableau/retail-analytics.twbx"
+      }
+    ],
     "images": [
       {
         "file": "tableau-w7-analytical-overview.png",

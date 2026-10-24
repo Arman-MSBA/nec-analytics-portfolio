@@ -19,7 +19,7 @@ The classification project uses anonymized academic benchmark/course data. It is
 
 Start with the README in the relevant project folder. Each explains the required input files, environment, execution order, saved aggregate results, and data limitations. The Tableau `.twbx` packages include Hyper extracts for viewing the saved dashboards. The analysis scripts and separate data-free Tableau `.twb` definitions use project-relative paths; obtain authorized source data separately before attempting a full run or a source refresh.
 
-Raw CSV datasets, borrower-level records, row-level predictions, fitted models, assignment briefs, grades, and private machine paths are excluded. The Tableau packages include only their synthetic retail coursework extracts and written notes; they contain no employer data. Original saved Tableau previews remain at their native 192px size.
+Raw CSV datasets, borrower-level records, row-level predictions, fitted models, assignment briefs, grades, and private machine paths are excluded. The Tableau packages include only their synthetic retail coursework extracts and written notes; they contain no employer data. The portfolio includes larger native Tableau screenshots with links to the original captures. The older embedded workbook thumbnails retain their native 192px size.
 
 ### Verification scope
 
@@ -34,6 +34,8 @@ LASSO remains the nutrition model selected by cross-validation even though Ridge
 
 - [`site/`](site) is a portable snapshot of the published static website.
 - [`website/`](website) contains its standalone generator, content, styles, scripts, and assets. Node.js 22 or newer is sufficient; no dependency installation is required for the build.
+
+Both directories match the published version 5 redesign: BI, machine learning, and applied AI appear together near the top of the homepage, and case studies lead with original project evidence. The snapshot includes self-contained Tableau workbook downloads and three native dashboard captures. Tableau Public browser interaction remains pending the owner's desktop sign-in; the current site offers static previews and workbook downloads.
 
 ```sh
 cd website
