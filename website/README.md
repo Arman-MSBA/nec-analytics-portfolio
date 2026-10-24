@@ -2,7 +2,7 @@
 
 [View the published portfolio](https://arman-khachatryan-ai-analytics.homehub-ai.chatgpt.site).
 
-This portable source matches the published version 5 redesign, synchronized from source commit `bc27a4d6eefe3731682e6fb413dfaa8e37f2fa9f`. The homepage presents business intelligence, machine learning, and applied AI together. Case studies begin with original artifacts and concise business questions, contributions, and findings. Career experience, learning, consulting capabilities, and the résumé remain available.
+This portable source contains the portfolio generator and public content. The homepage presents business intelligence, machine learning, and applied AI together. Case studies begin with original artifacts and concise business questions, contributions, and findings. Career experience, learning, consulting capabilities, and the résumé remain available.
 
 ## Build and preview
 
@@ -20,6 +20,7 @@ Open the printed local URL. The build writes `dist/`, which is ignored by Git. T
 
 - Content and saved aggregate metrics are in `content/`.
 - `scripts/generate-portfolio.mjs` creates the pages; `scripts/render-cases.mjs` owns the case-study templates.
+- `scripts/structured-data.mjs` creates page-specific JSON-LD: a `ProfilePage` and `Person`, a `WebSite`, references to five projects, and a `CreativeWork` for each case study. It uses verified public content and safely serializes the data into each page.
 - Styles and browser controls are in `static/styles.css` and `static/site.js`.
 - `public/` contains the résumé, original charts, Tableau captures, and approved synthetic retail `.twbx` packages.
 - [`DESIGN.md`](DESIGN.md) describes the presentation choices.
@@ -30,6 +31,6 @@ The Tableau packages include only approved synthetic retail course extracts and 
 
 ## Verification and publication
 
-Rebuild after content changes. Check local links, project filters, mobile navigation, model metric switching, workbook downloads, and desktop/mobile layouts. Training models or refreshing Tableau source data is separate from editing presentation. Saved coursework outputs do not establish external validation or business impact.
+Rebuild after content changes. Validate JSON-LD with the Schema.org validator when changing profile or project metadata; graph identifiers and canonical URLs should stay consistent. Structured data helps describe the content and does not guarantee enhanced search results. Check local links, project filters, mobile navigation, model metric switching, workbook downloads, and desktop/mobile layouts. Training models or refreshing Tableau source data is separate from editing presentation. Saved coursework outputs do not establish external validation or business impact.
 
 The current portfolio provides static Tableau previews and self-contained workbook downloads. Interactive Tableau Public publication awaits the owner's desktop sign-in. Pushing this repository does not deploy the live Sites website; that deployment is managed separately. Hosting identity, access settings, and credentials are intentionally absent from this portable source.

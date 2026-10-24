@@ -35,7 +35,7 @@ LASSO remains the nutrition model selected by cross-validation even though Ridge
 - [`site/`](site) is a portable snapshot of the published static website.
 - [`website/`](website) contains its standalone generator, content, styles, scripts, and assets. Node.js 22 or newer is sufficient; no dependency installation is required for the build.
 
-Both directories match the published version 5 redesign: BI, machine learning, and applied AI appear together near the top of the homepage, and case studies lead with original project evidence. The snapshot includes self-contained Tableau workbook downloads and three native dashboard captures. Tableau Public browser interaction remains pending the owner's desktop sign-in; the current site offers static previews and workbook downloads.
+The homepage presents BI, machine learning, and applied AI together, and case studies lead with original project evidence. Both directories include JSON-LD structured data for the professional profile, website, and five project case studies, generated from the same public content as the pages. The snapshot includes self-contained Tableau workbook downloads and three native dashboard captures. Tableau Public browser interaction remains pending the owner's desktop sign-in; the current site offers static previews and workbook downloads.
 
 ```sh
 cd website
