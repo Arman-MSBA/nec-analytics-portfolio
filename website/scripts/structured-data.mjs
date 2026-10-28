@@ -33,6 +33,7 @@ export function createStructuredData({ origin, profile, projects, applied, path,
       summary: project.summary,
       tools: project.tools,
       label: project.label,
+      workbooks: (project.workbooks ?? []).filter(workbook => workbook.tableauPublicUrl),
       images: project.slug === 'retail-tableau'
         ? ['tableau-overview-native.jpg', 'tableau-analytics-native.jpg', 'tableau-forecast-native.jpg']
         : project.images.map(image => image.file),
@@ -59,11 +60,33 @@ export function createStructuredData({ origin, profile, projects, applied, path,
       inLanguage: 'en',
       genre: project.label,
       keywords: project.tools,
+      ...(project.workbooks?.length ? {
+        hasPart: project.workbooks.map(workbook => ({ '@id': `${workbook.tableauPublicUrl}#workbook` })),
+      } : {}),
       ...(project.images.length ? {
         image: project.images.map(file => absolute(`/projects/coursework/${file}`)),
       } : {}),
     };
   };
+  const publishedReports = project => (project.workbooks ?? []).map(workbook => ({
+    '@type': 'CreativeWork',
+    '@id': `${workbook.tableauPublicUrl}#workbook`,
+    name: workbook.title,
+    description: workbook.description,
+    url: workbook.tableauPublicUrl,
+    author: { '@id': personId },
+    isPartOf: { '@id': `${absolute(`/projects/${project.slug}/`)}#project` },
+    mainEntityOfPage: workbook.tableauPublicUrl,
+    inLanguage: 'en',
+    genre: project.label,
+    isAccessibleForFree: true,
+    encoding: {
+      '@type': 'MediaObject',
+      name: workbook.fileName,
+      contentUrl: absolute(workbook.downloadUrl),
+      encodingFormat: 'https://help.tableau.com/current/pro/desktop/en-us/save_savework_packagedworkbooks.htm',
+    },
+  }));
   const webpage = {
     '@type': path === '/' ? 'ProfilePage' : 'WebPage',
     '@id': pageId,
@@ -82,12 +105,12 @@ export function createStructuredData({ origin, profile, projects, applied, path,
     // Generic ItemList markup triggers Google's carousel feature, whose supported
     // content types do not include these portfolio case studies.
     webpage.mentions = ordered.map(project => ({ '@id': `${absolute(`/projects/${project.slug}/`)}#project` }));
-    return { '@context': 'https://schema.org', '@graph': [website, person, webpage, ...ordered.map(projectNode)] };
+    return { '@context': 'https://schema.org', '@graph': [website, person, webpage, ...ordered.flatMap(project => [projectNode(project), ...publishedReports(project)])] };
   }
   const project = projectRecords.find(record => path === `/projects/${record.slug}/`);
   if (!project) throw new Error(`Missing structured data for page: ${path}`);
   webpage.mainEntity = { '@id': `${pageUrl}#project` };
-  return { '@context': 'https://schema.org', '@graph': [website, person, webpage, projectNode(project)] };
+  return { '@context': 'https://schema.org', '@graph': [website, person, webpage, projectNode(project), ...publishedReports(project)] };
 }
 
 /** Keep JSON data inside the script element even when future content contains HTML. */

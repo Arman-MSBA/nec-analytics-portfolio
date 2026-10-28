@@ -21,6 +21,7 @@ Open the printed local URL. The build writes `dist/`, which is ignored by Git. T
 - Content and saved aggregate metrics are in `content/`.
 - `scripts/generate-portfolio.mjs` creates the pages; `scripts/render-cases.mjs` owns the case-study templates.
 - `scripts/structured-data.mjs` creates page-specific JSON-LD: a `ProfilePage` and `Person`, a `WebSite`, references to five projects, and a `CreativeWork` for each case study. It uses verified public content and safely serializes the data into each page.
+- The retail project's `hasPart` relationships identify both published Tableau reports. Each report points to its verified public page, the shared author and parent project, and its downloadable TWBX `MediaObject` encoding. The homepage and retail case study share these stable report identities.
 - Styles and browser controls are in `static/styles.css` and `static/site.js`.
 - `public/` contains the résumé, original charts, Tableau captures, and approved synthetic retail `.twbx` packages.
 - [`DESIGN.md`](DESIGN.md) describes the presentation choices.
