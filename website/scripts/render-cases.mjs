@@ -87,8 +87,9 @@ export function renderCase(project, index, context) {
             <summary>Load interactive view<span class="sr-only">: ${esc(workbook.title)}</span></summary>
             <p class="embed-note">On a small screen, scroll across the view or open it on Tableau Public for more space.</p>
             <div class="tableau-embed" role="region" aria-label="${esc(workbook.title)} interactive dashboard, scroll horizontally if needed" tabindex="0" style="--tableau-width:${workbook.embedWidth}px;--tableau-height:${workbook.embedHeight}px">
-              <iframe loading="lazy" src="${esc(workbook.embedUrl)}" title="${esc(workbook.title)} interactive Tableau workbook" allowfullscreen></iframe>
+              <iframe data-src="${esc(workbook.embedUrl)}" title="${esc(workbook.title)} interactive Tableau workbook" allowfullscreen></iframe>
             </div>
+            <noscript><p>Open this workbook on Tableau Public to use its interactive view.</p></noscript>
           </details>
         </article>`).join('')}
     </section>` : '';
