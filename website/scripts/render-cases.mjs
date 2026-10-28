@@ -18,6 +18,18 @@ export function renderCase(project, index, context) {
       throw new Error(`Invalid packaged workbook download: ${workbook.downloadUrl}`);
     }
     validateWorkbook?.(workbook);
+    if (workbook.tableauPublicUrl || workbook.embedUrl) {
+      const publicUrl = new URL(workbook.tableauPublicUrl);
+      const embedUrl = new URL(workbook.embedUrl);
+      if ([publicUrl, embedUrl].some(url => url.protocol !== 'https:' || url.hostname !== 'public.tableau.com' || url.username || url.password)
+        || !publicUrl.pathname.startsWith('/app/profile/arman.khachatryan3803/viz/')
+        || !embedUrl.pathname.startsWith('/views/')
+        || publicUrl.pathname.split('/viz/')[1] !== embedUrl.pathname.slice('/views/'.length)
+        || embedUrl.searchParams.get(':embed') !== 'yes'
+        || ![workbook.embedWidth, workbook.embedHeight].every(value => Number.isInteger(value) && value >= 600 && value <= 2000)) {
+        throw new Error(`Invalid published Tableau view: ${workbook.title}`);
+      }
+    }
   }
 
   const downloadLink = (workbook, label, className = 'button secondary') =>
@@ -45,7 +57,9 @@ export function renderCase(project, index, context) {
     </figure>` : imageFigure(project.images[0], 'lead-figure', true);
 
   const actions = isTableau
-    ? workbooks.map((workbook, workbookIndex) => downloadLink(workbook, `Module ${workbookIndex + 7} · TWBX`)).join('')
+    ? workbooks.map((workbook, workbookIndex) =>
+      (workbook.tableauPublicUrl ? ext(workbook.tableauPublicUrl, `Module ${workbookIndex + 7} · Open online`, 'button primary') : '')
+      + downloadLink(workbook, `Module ${workbookIndex + 7} · TWBX`, 'text-link')).join('')
       + ext(sourceUrl, 'View source on GitHub', 'text-link')
     : ext(sourceUrl, 'View source on GitHub', 'button primary')
       + ext(notesUrl, 'Reproduction notes', 'button secondary');
@@ -57,14 +71,33 @@ export function renderCase(project, index, context) {
     ? 'Central leads sales at $44.57 million. Regional sales differ by about 1.4%, giving the category and time views useful context for a closer look.'
     : project.result;
   const limits = isTableau
-    ? 'The supplied retail data are synthetic course exercises. Trend fits and clusters are exploratory. No future-period forecast accuracy or realized sales improvement is claimed. These are static screenshots from the validated workbooks. The packaged workbooks include embedded extracts; refreshing from the original course CSV files requires those source files.'
+    ? 'The supplied retail data are synthetic course exercises. Trend fits and clusters are exploratory. No future-period forecast accuracy or realized sales improvement is claimed. The screenshots document the saved views; the published workbooks can be explored on Tableau Public. The packaged downloads include embedded extracts; refreshing from the original course CSV files requires those source files.'
     : project.limits;
+
+  const onlineWorkbooks = isTableau && workbooks.some(workbook => workbook.tableauPublicUrl) ? `
+    <section class="online-workbooks" id="interactive-workbooks" aria-labelledby="interactive-heading">
+      <h2 id="interactive-heading">Explore the dashboards online.</h2>
+      <p>Open a workbook on Tableau Public or expand a view below. No account is needed. Use the filters and chart marks to explore the analysis. Full workbooks are also available as downloads below.</p>
+      ${workbooks.filter(workbook => workbook.tableauPublicUrl).map(workbook => `
+        <article class="online-workbook">
+          <h3>${esc(workbook.title)}</h3>
+          <p>${esc(workbook.description)}</p>
+          ${ext(workbook.tableauPublicUrl, 'Open on Tableau Public', 'button secondary')}
+          <details class="interactive-preview">
+            <summary>Load interactive view<span class="sr-only">: ${esc(workbook.title)}</span></summary>
+            <p class="embed-note">On a small screen, scroll across the view or open it on Tableau Public for more space.</p>
+            <div class="tableau-embed" role="region" aria-label="${esc(workbook.title)} interactive dashboard, scroll horizontally if needed" tabindex="0" style="--tableau-width:${workbook.embedWidth}px;--tableau-height:${workbook.embedHeight}px">
+              <iframe loading="lazy" src="${esc(workbook.embedUrl)}" title="${esc(workbook.title)} interactive Tableau workbook" allowfullscreen></iframe>
+            </div>
+          </details>
+        </article>`).join('')}
+    </section>` : '';
 
   const tableauGallery = isTableau ? `
     <section class="workbook-gallery" aria-labelledby="workbook-gallery-heading">
       <div class="section-heading compact-heading">
         <div><p class="section-label">Inside the workbooks</p><h2 id="workbook-gallery-heading">A closer look at the analysis.</h2></div>
-        <p>Original dashboard captures show the work at a readable scale. Open the packaged files to use the filters and explore the saved views.</p>
+        <p>Original dashboard captures show the work at a readable scale. Explore the interactive workbooks above or download the packaged files.</p>
       </div>
       ${nativeFigure('analytics', 'Retail analytics overview', 'Module 8 · original Tableau desktop screenshot · synthetic course data')}
       ${nativeFigure('forecast', 'Comparing forecast assumptions', 'Module 8 · original Tableau desktop screenshot · synthetic course data')}
@@ -124,6 +157,8 @@ export function renderCase(project, index, context) {
           <section class="summary-block"><h2>What it shows</h2><p>${esc(result)}</p></section>
         </aside>
       </section>
+
+      ${onlineWorkbooks}
 
       <div class="case-body">
         ${isClassification ? '<p class="context-note">Independent NEC coursework on an anonymized competition dataset. This project is separate from my employment at Santander and was not deployed in bank systems.</p>' : ''}

@@ -45,13 +45,21 @@
         "title": "Retail performance · Module 7",
         "description": "Three dashboards and a four-point story covering the analytical overview, interactive insights and KPI scorecard.",
         "fileName": "retail-performance.twbx",
-        "downloadUrl": "/downloads/tableau/retail-performance.twbx"
+        "downloadUrl": "/downloads/tableau/retail-performance.twbx",
+        "tableauPublicUrl": "https://public.tableau.com/app/profile/arman.khachatryan3803/viz/retail-performance/AnalyticalOverview",
+        "embedUrl": "https://public.tableau.com/views/retail-performance/AnalyticalOverview?:embed=yes&:showVizHome=no&:tabs=yes&:toolbar=yes",
+        "embedWidth": 1120,
+        "embedHeight": 1060
       },
       {
         "title": "Retail analytics · Module 8",
         "description": "Five dashboards exploring trends, profit distributions, clusters and seasonal forecast comparisons.",
         "fileName": "retail-analytics.twbx",
-        "downloadUrl": "/downloads/tableau/retail-analytics.twbx"
+        "downloadUrl": "/downloads/tableau/retail-analytics.twbx",
+        "tableauPublicUrl": "https://public.tableau.com/app/profile/arman.khachatryan3803/viz/retail-analytics_17931048231660/ERetailAnalyticsOverview",
+        "embedUrl": "https://public.tableau.com/views/retail-analytics_17931048231660/ERetailAnalyticsOverview?:embed=yes&:showVizHome=no&:tabs=yes&:toolbar=yes",
+        "embedWidth": 1200,
+        "embedHeight": 1080
       }
     ],
     "images": [

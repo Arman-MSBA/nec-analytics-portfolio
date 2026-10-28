@@ -18,6 +18,11 @@ custom seasonal forecasts. The saved workbook includes written interpretation.
 
 ## Available artifacts
 
+Explore the published overview dashboards in your browser, without signing in:
+
+- [Retail performance — Module 7 on Tableau Public](https://public.tableau.com/app/profile/arman.khachatryan3803/viz/retail-performance/AnalyticalOverview)
+- [Retail analytics — Module 8 on Tableau Public](https://public.tableau.com/app/profile/arman.khachatryan3803/viz/retail-analytics_17931048231660/ERetailAnalyticsOverview)
+
 Download a packaged workbook to open the dashboards with their saved data:
 
 - [Retail performance — Module 7](workbooks/retail-performance.twbx)
@@ -35,8 +40,9 @@ use the `.twbx` packages for viewing. Private local paths and connection credent
 have been removed from the public copies.
 
 [Read the portfolio case study](https://arman-khachatryan-ai-analytics.homehub-ai.chatgpt.site/projects/retail-tableau/)
-for the business questions, findings and limitations. A GitHub file preview does
-not run Tableau; an interactive browser view requires publication to Tableau Public.
+for the business questions, findings, limitations, and expandable interactive previews.
+A GitHub file preview does not run Tableau; use the published Tableau Public links
+above or download a packaged workbook to explore the saved views in the desktop app.
 
 The `figures/` images are genuine embedded workbook thumbnails at their saved
 resolution, not new dashboard captures. They are useful as previews, not detailed screenshots.
